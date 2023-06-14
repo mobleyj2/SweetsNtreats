@@ -4,12 +4,19 @@ const express =require('express')
 const app = express();
 
 //Import models here! 
-router.get('/login', (req, res) => {
+
+app.use(session({
+  secret: 'yourSecretKey',
+  resave: false,
+  saveUninitialized: true
+}));
+
+router.get('/cookies', (req, res) => {
   //if user logged in render them to home routes if not render to handlebars
   if (req.session.loggedIn) {
 res.render('homepage')
   }
-    res.render('login')
+    res.render('cookies')
   })
   app.use (session ({
     secret:'yourSecertKey',
@@ -21,7 +28,7 @@ app.get ('/', function(req, res) {
   if (req.session.loggedIn){
     res.send('welcome')
   } else { 
-    res.redirect('/login')
+    res.redirect('/cookies')
   }
 })
 
@@ -31,10 +38,10 @@ console.log("homeroutes")
   res.render('homepage')
 })
 
-router.get('/recipes', (req, res) => {
+router.get('/candies', (req, res) => {
   //Query database here
 
-  res.render('recipelist')
+  res.render('candies')
 })
 
 

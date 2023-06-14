@@ -8,10 +8,10 @@ const bcrypt = require('bcrypt');
 
 // MySQL connection configuration
 const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'your_mysql_user',
-  password: 'your_mysql_password',
-  database: 'your_database_name'
+  host: 'localhost:3001',
+  user: '',
+  password: '',
+  database: 'recipe_db'
 });
 
 // Connect to MySQL
