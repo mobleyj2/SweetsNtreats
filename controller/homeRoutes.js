@@ -44,5 +44,11 @@ router.get('/candies', (req, res) => {
   res.render('candies')
 })
 
+router.get('/dashboard', (req, res) => {
+  //Query database here
+
+  res.render('dashboard')
+})
+
 
 module.exports = router

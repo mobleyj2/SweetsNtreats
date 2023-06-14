@@ -17,15 +17,15 @@
       <li class="li-inline nav-item"><a href ="/candies">Candies</a></li>
     </ul>
      <div> User Register </div>
-    <form id = "register-form" class = "hidden">
+    <form id = "register-form">
       <label for="username">Username</label>
       <input type="text" name="username" id="username" placeholder="Username">
       <label for = "email">Email</label>
       <input type="text" name="email" id="email" placeholder="Email">
       <label for = "password">Password</label>
       <input type="password" name="password" id="password" placeholder="Password">
-      <label for = "confirm-password">Confirm Password</label>
-      <input type="password" name="confirm-password" id="confirm-password" placeholder="Confirm Password">
+      {{!-- <label for = "confirm-password">Confirm Password</label>
+      <input type="password" name="confirm-password" id="confirm-password" placeholder="Confirm Password"> --}}
       <button type="submit">Register</button>
     </form>
 
@@ -43,4 +43,5 @@
 </body>
 
 </html>
-<script src=".js/logout.js"></script>
+<script src="/js/register.js"></script>
+<script src="/js/logout.js"></script>
