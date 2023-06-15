@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Recipe Blog</title>
   <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body class="flex-column min-100-vh">
@@ -15,7 +15,15 @@
       <li class="li-inline nav-item"><a href="/">Home</a></li>
       <li class="li-inline nav-item"><a href="/cookies">Cookies</a></li>
       <li class="li-inline nav-item"><a href ="/candies">Candies</a></li>
+       {{#if loggedIn}}
+      <li class="li-inline nav-item" id="logout">Logout</li>
+       {{else}}
+       <li class="li-inline nav-item"><a href ="/login">Login</a></li>
+
+{{/if}}
+
     </ul>
+
      <div> User Register </div>
     <form id = "register-form">
       <label for="username">Username</label>
@@ -28,6 +36,7 @@
       <input type="password" name="confirm-password" id="confirm-password" placeholder="Confirm Password"> --}}
       <button type="submit">Register</button>
     </form>
+
 
   <header class="hero">
     <h1 class="app-title"><a href="/">Sweets n' Treats</a></h1>

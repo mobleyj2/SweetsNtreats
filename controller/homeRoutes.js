@@ -33,15 +33,24 @@ app.get ('/', function(req, res) {
 })
 
 router.get('/', (req, res) => {
-  //Query database here
-console.log("homeroutes")
-  res.render('homepage')
+
+  res.render('homepage', {
+    // loggedIn: true
+  })
 })
 
 router.get('/candies', (req, res) => {
   //Query database here
 
   res.render('candies')
+});
+
+router.get('/register', (req, res)=> {
+  res.render('register')
+})
+
+router.get('/login', (req, res)=> {
+  res.render('login')
 })
 
 router.get('/dashboard', (req, res) => {
