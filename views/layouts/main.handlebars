@@ -6,19 +6,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Recipe Blog</title>
   <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
-<body class="flex-column min-100-vh">
-  <nav class="navbar">
-    <ul>
-      <li class="li-inline nav-item"><a href="/">Home</a></li>
-      <li class="li-inline nav-item"><a href="/cookies">Cookies</a></li>
-      <li class="li-inline nav-item"><a href ="/candies">Candies</a></li>
+<body>
+  <nav class="navbar has-shadow is-white px-2 pt-4">
+    <h1 class="title"><a href="/">Sweets n' Treats</a></h1>
+    
+      <div class="navbar-menu" id="nav-links">   
+       <div class="navbar-end"></div> 
+      <a href="/" class="navbar-item button is-rounded">Home</a>
+      <a href="/cookies" class="navbar-item button is-rounded">Cookies</a>
+      <a href ="/candies" class="navbar-item button is-rounded">Candies</a>
        {{#if loggedIn}}
-      <li class="li-inline nav-item" id="logout">Logout</li>
+      <a class="navbar-item button is-rounded" id="logout">Logout</a>
        {{else}}
-       <li class="li-inline nav-item"><a href ="/login">Login</a></li>
+       <a href ="/login" class="navbar-item button is-rounded">Login</a>
+      </div> 
+      </div>
+    </nav>   
        
 {{/if}}
 
@@ -38,9 +45,7 @@
     </form>
 
 
-  <header class="hero">
-    <h1 class="app-title"><a href="/">Sweets n' Treats</a></h1>
-  </header>
+
 
   <main class="col-auto">
     {{{body}}}
