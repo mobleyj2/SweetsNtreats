@@ -4,39 +4,51 @@ const express =require('express')
 const app = express();
 
 //Import models here! 
+const { User, Recipe } = require('../models')
 
-app.use(session({
-  secret: 'yourSecretKey',
-  resave: false,
-  saveUninitialized: true
-}));
 
-router.get('/cookies', (req, res) => {
-  //if user logged in render them to home routes if not render to handlebars
-  if (req.session.loggedIn) {
-res.render('homepage')
-  }
-    res.render('cookies')
+router.get('/cookies', async (req, res) => {
+try {
+
+  const recipeData = (await Recipe.findAll({where: { category: 'cookies' }}));
+
+  const cookies = recipeData.map((recipe) => recipe.get({ plain: true }));
+
+  res.render('cookies', {
+    loggedIn: req.session.logged_in,
+    cookies
   })
-  app.use (session ({
-    secret:'yourSecertKey',
-    resave: false,
-    saveUninitialized: true
-  }))
 
-app.get ('/', function(req, res) {
-  if (req.session.loggedIn){
-    res.send('welcome')
-  } else { 
-    res.redirect('/cookies')
-  }
-})
+} catch (err) {
+  res.status(400).json(err)
+}
+    
+  })
 
-router.get('/', (req, res) => {
+  router.get('/newrecipe', async (req, res) => {
+    res.render('postRecipe', {
+      loggedIn: req.session.logged_in
+    })
+  })
+
+
+
+
+router.get('/', async(req, res) => {
+try {
+
+  const recipeData = (await Recipe.findAll());
+
+  const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
 
   res.render('homepage', {
-    // loggedIn: true
+    loggedIn: req.session.logged_in, 
+    recipes
   })
+
+}catch (err) {
+  res.status(400).json(err)
+}
 })
 
 router.get('/candies', (req, res) => {
