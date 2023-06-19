@@ -2,14 +2,11 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 // create our User model
-class recipe extends Model {
-  // set up method to run on instance data (per user) to check password
-//  checkPassword(loginPw) {
- //   return bcrypt.compareSync(loginPw, this.password);
-//  }
+class Recipe extends Model {
+
 }
 
-recipe.init(
+Recipe.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -26,21 +23,23 @@ recipe.init(
       allowNull: false 
       //check list or something
     },
-    ingredients: {
-        type: DataTypes.STRING,
-        allowNull: false 
-        //check list or something
-      },
     instructions: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        len: [4]
-        //check list or list 
-      }
-    }
+    }, 
+    category: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      }, 
   },
-  
+  {
+   
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'recipe'
+  }
 );
 
-module.exports = User;
+module.exports = Recipe;

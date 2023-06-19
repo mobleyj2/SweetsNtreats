@@ -1,27 +1,9 @@
-*<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <script scr="js/main.js"></script>
-</head>
-<body>
-<form id = "loginForm">
-    <label for = "username">UserName</label>
-    <input type = "text" id = "username-login" required></input>
-    <br>
-    <label for = "password">Password</label>
+{{#each recipes}}
+<div>
+    <h1>{{title}}</h1>
+    <p>{{ingredients}}</p>
+    <p>{{instructions}}</p>
+    <p>{{category}}</p>
+</div>
 
-    <input type = "password" id = "password-login" required></input>
-    <br>
-    <button type = "submit">Login</button> <!--connect login to homepage/ everything -->
-    
-    
-
-
-</body>
-<script src = '/js/login.js'> </script>
-</html>
-
-
+{{/each}}

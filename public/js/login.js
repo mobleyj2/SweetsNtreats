@@ -95,8 +95,8 @@
 document.getElementById('loginForm').addEventListener('submit', function(event) {
   event.preventDefault();
   
-  const username = document.getElementById('username-login').value;
-  const password = document.getElementById('password-login').value;
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
   // const confirmPassword = document.getElementById('confirm-password').value;
   // if (password !== confirmPassword) {
   //   alert('Passwords do not match');

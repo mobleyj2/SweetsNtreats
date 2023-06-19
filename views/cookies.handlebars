@@ -1,11 +1,14 @@
+<div>
+    <h1>Recipes for Cookies</h1>
+    {{#each cookies}}
+    <div>
+        <h1>{{title}}</h1>
+        <p>{{ingredients}}</p>
+        <p>{{instructions}}</p>
+    </div>
+    {{/each}}
+</div>
 
-<head>
-<title>Cookies and Cakes</title>
-<script src="scripts/cookies.js" type="module"></script>
-<script src="scripts/cakes.js" type="module"></script>
-<script src="scripts/main.js" type="module"></script>
-</head>
-<body>
-   <h1>Cookies n' Cakes</h1>
-    <ul id="cookies"></ul>
-    </body>
+<div>
+    <button><a href="/newrecipe">Add a cookie recipe</a></button>
+</div>
