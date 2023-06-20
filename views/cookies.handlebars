@@ -1,14 +1,43 @@
 <div>
-    <h1>Recipes for Cookies</h1>
-    {{#each cookies}}
+  <h1>Recipes for Cookies</h1>
+  <div>
+  <button><a href="/newrecipe">Add a Cookies recipe</a></button>
+</div>
+  {{#each cookies}}
+
+  <div class="recipe-box">
     <div>
-        <h1>{{title}}</h1>
-        <p>{{ingredients}}</p>
-        <p>{{instructions}}</p>
+      <h2><b>Title</b>: {{title}}</h2>
+      <p><b>Ingredients:</b> {{ingredients}}</p>
+      <p><b>Instructions:</b> {{instructions}}</p>
     </div>
-    {{/each}}
+    <button class="delete-button" id= "delete-recipe" value={{title}} data-id="{{title}}">Delete</button>
+  </div>
+  {{/each}}
 </div>
 
-<div>
-    <button><a href="/newrecipe">Add a cookie recipe</a></button>
-</div>
+
+
+<script src="/js/deleteRecipe.js"></script>
+
+<style>
+  .recipe-box {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  .delete-button {
+    background-color: #ff0000;
+    color: #ffffff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  .delete-button:hover {
+    background-color: #cc0000;
+  }
+</style>

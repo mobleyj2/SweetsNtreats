@@ -1,9 +1,5 @@
-<!-- create dashboard -->
-
-{{#if user}}
-  <h1>Dashboard</h1>
-  <p>Welcome {{user.name}}</p>
-{{else}}
-  <p>This is the dashboard</p>
-{{/if}}
-```
+{{#each recipes}}
+<h2>{{title}}</h2>
+<h2>{{ingredients}}</h2>
+<h2>{{instructions}}</h2>
+{{/each}}
