@@ -25,3 +25,4 @@ const recipeFormHandler = async (event) => {
 }
 
 document.querySelector('#recipeForm').addEventListener('submit', recipeFormHandler)
+
