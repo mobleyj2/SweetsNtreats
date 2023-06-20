@@ -14,47 +14,26 @@
   <nav class="navbar has-shadow is-white px-2 pt-4">
     <h1 class="title"><a href="/">Sweets n' Treats</a></h1>
     
-      <div class="navbar-menu" id="nav-links">   
-       <div class="navbar-end"></div> 
-      <a href="/" class="navbar-item button is-rounded">Home</a>
-      <a href="/cookies" class="navbar-item button is-rounded">Cookies</a>
-      <a href ="/candies" class="navbar-item button is-rounded">Candies</a>
-      <a href ="/register" class="navbar-item button is-rounded">Register</a>
-       {{#if loggedIn}}
-      <a class="navbar-item button is-rounded" id="logout">Logout</a>
-       {{else}}
-       <a href ="/login" class="navbar-item button is-rounded">Login</a>
-      </div> 
+    <div class="navbar-menu" id="nav-links">
+      <div class="navbar-end">
+        <a href="/" class="navbar-item button is-rounded">Home</a>
+        <a href="/cookies" class="navbar-item button is-rounded">Cookies</a>
+        <a href="/candies" class="navbar-item button is-rounded">Candies</a>
+        <a href="/register" class="navbar-item button is-rounded">Register</a>
+        {{#if loggedIn}}
+        <a class="navbar-item button is-rounded" id="logout">Logout</a>
+        {{else}}
+        <a href="/login" class="navbar-item button is-rounded">Login</a>
+        {{/if}}
       </div>
-    </nav>   
-       
-{{/if}}
+    </div>
+  </nav>
 
-    {{!-- </ul>
-
-     <div> User Register </div>
-    <form id = "register-form">
-      <label for="username">Username</label>
-      <input type="text" name="username" id="username" placeholder="Username">
-      <label for = "email">Email</label>
-      <input type="text" name="email" id="email" placeholder="Email">
-      <label for = "password">Password</label>
-      <input type="password" name="password" id="password" placeholder="Password">
-      {{!-- <label for = "confirm-password">Confirm Password</label>
-      <input type="password" name="confirm-password" id="confirm-password" placeholder="Confirm Password"> --}}
-      
-
-
-
-
-  <main >
+  <main>
     {{{body}}}
   </main>
-
-  <footer class="flex-row justify-center">
-
-  </footer>
+  
+  <script src="/js/logout.js"></script>
 </body>
 
 </html>
-<script src="/js/logout.js"></script>

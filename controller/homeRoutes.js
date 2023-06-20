@@ -60,10 +60,11 @@ router.get('/login', (req, res) => {
 });
 
 
-router.get('/dashboard', (req, res) => {
+//router.get('/dashboard', (req, res) => {
   // Query database here
-  res.render('dashboard');
-});
+ // res.render('dashboard');
+//});
+
 
 router.get('/dashboard', async (req, res) => {
   //Query database here
