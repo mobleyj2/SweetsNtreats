@@ -1,1 +1,9 @@
-<h2>We've come so far</h2>
+<!-- create dashboard -->
+
+{{#if user}}
+  <h1>Dashboard</h1>
+  <p>Welcome {{user.name}}</p>
+{{else}}
+  <p>This is the dashboard</p>
+{{/if}}
+```
