@@ -10,3 +10,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     );
 });
+import candies from './candies.js';
+
+document.addEventListener('DOMContentLoaded', function() {
+  const candyList = document.getElementById('candy-list');
+
+  candies.forEach((candy) => {
+    const li = document.createElement('li');
+    li.textContent = candy.name;
+    candyList.appendChild(li);
+  });
+});
