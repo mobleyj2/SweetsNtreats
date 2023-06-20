@@ -60,6 +60,7 @@ router.get('/login', (req, res) => {
 });
 
 
+
 router.get('/dashboard', async (req, res) => {
   //Query database here
   try {
@@ -74,7 +75,7 @@ router.get('/dashboard', async (req, res) => {
 }
   catch (err) {
     res.status(400).json(err)
-}});
+
 
 
 module.exports = router;
