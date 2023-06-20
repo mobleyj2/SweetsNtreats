@@ -59,12 +59,10 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-<<<<<<< HEAD
-router.get('/dashboard', (req, res) => {
-  // Query database here
-  res.render('dashboard');
-});
-=======
+// router.get('/dashboard', (req, res) => {
+//   // Query database here
+//   res.render('dashboard');
+// });
 router.get('/dashboard', async (req, res) => {
   //Query database here
   try {
@@ -76,11 +74,9 @@ router.get('/dashboard', async (req, res) => {
       loggedIn: req.session.logged_in, 
       recipes
     })
-  }
+}
   catch (err) {
     res.status(400).json(err)
-  }
->>>>>>> ba5bf69faacb9e3dc8f74bed22df72bcaeec95aa
+}});
 
 module.exports = router;
-
