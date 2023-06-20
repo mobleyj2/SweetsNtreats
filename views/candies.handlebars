@@ -1,1 +1,19 @@
 <h1 class = "is-size-1">Candies n' Confections</h1>
+
+<div>
+    <h1>Recipes for Candies</h1>
+    <br>
+    {{#each candies}}
+    <div>
+        <h1>{{title}}</h1>
+        <br>
+        <p>{{ingredients}}</p>
+        <br>
+        <p>{{instructions}}</p>
+    </div>
+    {{/each}}
+</div>
+
+<div>
+    <button><a href="/newrecipe">Add a Candy recipe</a></button>
+</div>
