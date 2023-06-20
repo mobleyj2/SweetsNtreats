@@ -60,11 +60,6 @@ router.get('/login', (req, res) => {
 });
 
 
-//router.get('/dashboard', (req, res) => {
-  // Query database here
- // res.render('dashboard');
-//});
-
 
 router.get('/dashboard', async (req, res) => {
   //Query database here
@@ -72,17 +67,15 @@ router.get('/dashboard', async (req, res) => {
     const recipeData = (await Recipe.findAll());
 
     const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
-
+    console.log(recipes)
     res.render('dashboard', {
       loggedIn: req.session.logged_in, 
       recipes
     })
-  }
+}
   catch (err) {
     res.status(400).json(err)
-  }
-});
+
 
 
 module.exports = router;
-

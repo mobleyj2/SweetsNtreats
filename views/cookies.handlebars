@@ -11,14 +11,22 @@
       <p><b>Ingredients:</b> {{ingredients}}</p>
       <p><b>Instructions:</b> {{instructions}}</p>
     </div>
+
+    <button class="delete-button" id= "delete-recipe" value={{title}} data-id="{{title}}">Delete</button>
+
     <button class="delete-button" data-id="{{title}}">Delete</button>
+
   </div>
   {{/each}}
 </div>
 
 
 
+
+<script src="/js/deleteRecipe.js"></script>
+
 <script src="../public/js/deleteRecipe.js"></script>
+
 
 <style>
   .recipe-box {
