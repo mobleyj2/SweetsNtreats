@@ -59,23 +59,22 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-
-
 router.get('/dashboard', async (req, res) => {
-  //Query database here
+  // Query database here
   try {
-    const recipeData = (await Recipe.findAll());
-
+    const recipeData = await Recipe.findAll();
     const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
-    console.log(recipes)
+    console.log(recipes);
     res.render('dashboard', {
-      loggedIn: req.session.logged_in, 
+      loggedIn: req.session.logged_in,
       recipes
+
     })
 }
   catch (err) {
     res.status(400).json(err)
 }});
+
 
 
 
