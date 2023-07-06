@@ -68,10 +68,14 @@ router.get('/dashboard', async (req, res) => {
     res.render('dashboard', {
       loggedIn: req.session.logged_in,
       recipes
-    });
-  } catch (err) {
-    res.status(400).json(err);
-  }
-});
+
+    })
+}
+  catch (err) {
+    res.status(400).json(err)
+}});
+
+
+
 
 module.exports = router;
